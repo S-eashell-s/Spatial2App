@@ -1,0 +1,293 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (448.60.4)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["baseballBat", "floorImpactSound_mp3", "Chamber", "backgroundMusic_mp3", "AmbientAudio"]
+    def "baseballBat" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 3.1415927, 0)
+        }
+        prepend references = @baseballBat.usdz@
+    )
+    {
+        quatf xformOp:orient = (-4.371139e-8, 0, 1, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (1.3969839e-8, 0, -0.25)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "Collider" (
+            active = false
+        )
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Trigger"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.09800075, 0.09800076, 0.7828386)
+                float height = 0.09800076
+                float radius = 0.3914193
+                token shapeType = "Capsule"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (3.7252903e-9, -3.7252903e-9, -0.047678307)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody" (
+            active = false
+        )
+        {
+            bool gravityEnabled = 0
+            uniform token info:id = "RealityKit.RigidBody"
+            bool isCCDEnabled = 0
+            bool lockTranslationX = 0
+            token motionType = "Kinematic"
+
+            def RealityKitStruct "massFrame"
+            {
+                float m_mass = 3
+
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (0, 0, 0)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+            }
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+
+        def RealityKitComponent "MotionState" (
+            active = false
+        )
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+
+        def RealityKitComponent "Anchoring"
+        {
+            uniform token info:id = "RealityKit.Anchoring"
+
+            def RealityKitStruct "descriptor"
+            {
+                token location = "Palm"
+                token orientation = "Right"
+                token type = "Hand"
+            }
+        }
+    }
+
+    def Xform "Chamber" (
+        active = true
+    )
+    {
+        reorder nameChildren = ["Structure", "Rails", "ChamberMat", "Wall_1", "Wall_2", "Wall_3", "Wall_4", "Floor", "Ceiling", "RestartPoint", "Box", "Ball"]
+        float2 ui:nodegraph:node:pos = (40, 40)
+        int ui:nodegraph:node:stackingOrder = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Xform "Structure" (
+            active = true
+        )
+        {
+            reorder nameChildren = ["WallMaterial", "Wall_1", "Wall_2", "Wall_3", "Wall_4", "Floor", "Ceiling"]
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def RealityKitComponent "VFXEmitter"
+        {
+            uniform token info:id = "RealityKit.VFXEmitter"
+
+            def RealityKitStruct "currentState"
+            {
+                token birthDirection = "Normal"
+                token birthLocation = "Surface"
+                int64 burstCount = 25
+                float3 emissionDirection = (0, 1, 0)
+                double emissionDuration = 1
+                double emissionDurationVariation = 0
+                token emitterShape = "Box"
+                double idleDuration = 0
+                double idleDurationVariation = 0
+                bool isEmitting = 0
+                bool isLocal = 0
+                bool isSpawningEnabled = 1
+                bool loops = 0
+                float particleSpeed = 1.4
+                float particleSpeedVariation = 0.1
+                float3 shapeSize = (0.5, 0.5, 0.5)
+                bool spawnInheritParentColor = 1
+                token spawnOccasion = "OnUpdate"
+                float spawnSpreadFactor = 0.2
+                float spawnSpreadFactorVariation = 0.1
+                float spawnVelocityFactor = 0.1
+                double warmupDuration = 0
+
+                def RealityKitStruct "mainEmitter"
+                {
+                    float3 acceleration = (0, -0.1, 0)
+                    token animationRepeatMode = "Looping"
+                    token billboardMode = "Billboard"
+                    float birthRate = 1.2
+                    float birthRateVariation = 1
+                    token blendMode = "Additive"
+                    float colorEvolutionPower = 1
+                    int64 columnCount = 2
+                    float dampingFactor = 3.2
+                    float4 endColorA = (0.0013309671, 0.03458923, 1, 1)
+                    float4 endColorB = (0.11386989, 0.0064959256, 0.10626237, 1)
+                    float frameRate = 0
+                    float frameRateVariation = 0
+                    int64 initialFrame = 0
+                    int64 initialFrameVariation = 3
+                    bool isAnimated = 1
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 0
+                    float noiseScale = 1
+                    float noiseStrength = 0
+                    token opacityOverLife = "Constant"
+                    float particleAngle = 0
+                    float particleAngleVariation = 0
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0
+                    asset particleImage = @ParticleEmitterPresetTextures/flaresheet.exr@
+                    double particleLifeSpan = 0.52
+                    double particleLifeSpanVariation = 0
+                    float particleMass = 1
+                    float particleMassVariation = 0
+                    float particleSize = 0.004
+                    float particleSizeVariation = 0
+                    float3 radialGravityCenter = (0, 12, 0)
+                    float radialGravityStrength = -1
+                    int64 rowCount = 2
+                    float sizeMultiplierAtEndOfLifespan = 1
+                    float sizeMultiplierAtEndOfLifespanPower = 1
+                    token sortOrder = "IncreasingDepth"
+                    float spreadingAngle = 0.1
+                    float4 startColorA = (1, 0.051991113, 1, 1)
+                    float4 startColorB = (0, 0.98059916, 1, 1)
+                    float stretchFactor = 0
+                    bool useEndColor = 0
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 1
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+
+                def RealityKitStruct "spawnedEmitter"
+                {
+                    float3 acceleration = (0, -0.15, 0)
+                    token animationRepeatMode = "Looping"
+                    token billboardMode = "Billboard"
+                    float birthRate = 39000
+                    float birthRateVariation = 8000
+                    token blendMode = "Additive"
+                    float colorEvolutionPower = 1
+                    int64 columnCount = 2
+                    float dampingFactor = 4
+                    float4 endColorA = (0.0013309671, 0.03458923, 1, 1)
+                    float4 endColorB = (0.11386989, 0.0064959256, 0.10626237, 1)
+                    float frameRate = 12
+                    float frameRateVariation = 3
+                    int64 initialFrame = 0
+                    int64 initialFrameVariation = 3
+                    bool isAnimated = 1
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 0.2
+                    float noiseScale = 3
+                    float noiseStrength = 0.02
+                    token opacityOverLife = "LinearFadeOut"
+                    float particleAngle = 0
+                    float particleAngleVariation = 2
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0
+                    asset particleImage = @ParticleEmitterPresetTextures/flaresheet.exr@
+                    double particleLifeSpan = 1.8
+                    double particleLifeSpanVariation = 0.5
+                    float particleMass = 0.75
+                    float particleMassVariation = 0.5
+                    float particleSize = 0.03
+                    float particleSizeVariation = 0.01
+                    float3 radialGravityCenter = (0, -3, -3)
+                    float radialGravityStrength = 0
+                    int64 rowCount = 2
+                    float sizeMultiplierAtEndOfLifespan = 0.01
+                    float sizeMultiplierAtEndOfLifespanPower = 0.03
+                    token sortOrder = "IncreasingID"
+                    float spreadingAngle = 3
+                    float4 startColorA = (1, 1, 1, 1)
+                    float4 startColorB = (1, 1, 1, 1)
+                    float stretchFactor = 0
+                    bool useEndColor = 0
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 0
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+            }
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+    }
+
+    def "baseballBat_1" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 3.1415927, 0)
+        }
+        prepend references = @baseballBat.usdz@
+    )
+    {
+        quatf xformOp:orient = (-4.371139e-8, 0, 1, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, -0.25)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+
+        def RealityKitComponent "Anchoring"
+        {
+            uniform token info:id = "RealityKit.Anchoring"
+
+            def RealityKitStruct "descriptor"
+            {
+                token location = "Palm"
+                token orientation = "Left"
+                token type = "Hand"
+            }
+        }
+    }
+}
+

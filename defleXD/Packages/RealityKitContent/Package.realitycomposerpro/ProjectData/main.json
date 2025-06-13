@@ -1,0 +1,17 @@
+{
+  "pathsToIds" : {
+    "\/RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/GridMaterial.usda" : "440DE5B4-E4E4-459B-AABF-9ACE96319272",
+    "\/RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Scene.usda" : "0A9B4653-B11E-4D6A-850E-C6FCB621626C",
+    "\/RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Untitled Scene.usda" : "03E02005-EFA6-48D6-8A76-05B2822A74E9",
+    "\/RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/procedural_sphere_grid.usda" : "34C460AE-CA1B-4348-BD05-621ACBDFFE97",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/GridMaterial.usda" : "FBD8436F-6B8B-4B82-99B5-995D538B4704",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Materials\/GridMaterial.usda" : "15442DA1-E8E1-4743-B909-EF6844814D01",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/ParticleEmitterPresetTextures\/Untitled%20Scene.usda" : "A65970A2-E3A1-4D10-8D01-2BDC157F97A3",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/PhysicsPlayground.usda" : "A10EA290-87F0-40C8-AF6C-473D4615150D",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Scene.usda" : "26DBAE76-5DD8-47B6-A085-1B4ADA111097",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/Untitled%20Scene.usda" : "D4A673C6-41BA-4D3E-8FE3-B014BF143B9C",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/baseball.usdc" : "7C47133F-116A-45E9-A795-0BB27FFD4F67",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/baseballBat.usdc" : "A61F17CB-42F9-4291-B14A-477FBF5D0F74",
+    "RealityKitContent\/Sources\/RealityKitContent\/RealityKitContent.rkassets\/procedural_sphere_grid.usda" : "1CBF3893-ABFD-408C-8B91-045BFD257808"
+  }
+}
